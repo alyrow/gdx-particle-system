@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'maven'
 }
 
 group 'io.github.alyrow'
@@ -34,4 +35,8 @@ task fatJar(type: Jar) {
 task sourcesJar(type: Jar, dependsOn: classes) {
     archiveClassifier = "sources"
     from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
 }
